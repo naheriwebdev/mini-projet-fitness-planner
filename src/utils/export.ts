@@ -17,5 +17,38 @@ export function exporterCSV(lignes: LigneTableau[]): void {
 }
 
 export function exporterPDF(): void {
-  window.print()
+  // only print the table instead of the whole page
+  const table = document.querySelector('table')
+  if (!table) {
+    window.print()
+    return
+  }
+
+  const html = `
+    <html>
+      <head>
+        <title>Programme</title>
+        <style>
+          table { width: 100%; border-collapse: collapse; }
+          table, th, td { border: 1px solid black; }
+          th, td { padding: 4px; text-align: left; }
+          body { font-family: sans-serif; margin: 1cm; }
+        </style>
+      </head>
+      <body>
+        ${table.outerHTML}
+      </body>
+    </html>
+  `
+
+  const newWin = window.open('', '_blank')
+  if (newWin) {
+    newWin.document.write(html)
+    newWin.document.close()
+    newWin.focus()
+    newWin.print()
+    newWin.close()
+  } else {
+    window.print()
+  }
 }
