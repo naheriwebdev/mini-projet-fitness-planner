@@ -14,8 +14,7 @@ Application web permettant de générer un programme d'entraînement personnalis
 ## Installation
 
 ```bash
-git clone <url-du-repo>
-cd fitness-planner
+git clone <https://github.com/naheriwebdev/mini-projet-fitness-planner.git>
 npm install
 ```
 
@@ -27,14 +26,7 @@ npm run dev
 
 Ouvre ensuite [http://localhost:5173](http://localhost:5173) dans ton navigateur.
 
-## Build de production
 
-```bash
-npm run build
-npm run preview
-```
-
----
 
 ## Fonctionnalités
 
@@ -55,6 +47,9 @@ Tous les champs sont valides : poids positifs, poids max supérieur au poids mi
 
 **Bonus 2 – Responsive**
 L'interface s'adapte aux mobiles, tablettes et desktop.
+![image](/images/CleanShot%202026-02-20%20at%2011.46.43@2x.jpg)
+
+![image](/images/CleanShot 2026-02-20 at 11.47.07@2x.jpg)
 
 **Bonus 3 – Export**
 Export en CSV (téléchargement direct) et en PDF (impression navigateur).
