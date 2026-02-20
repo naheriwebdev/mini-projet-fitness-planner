@@ -30,28 +30,35 @@ Ouvre ensuite [http://localhost:5173](http://localhost:5173) dans ton navigateur
 
 ## Fonctionnalités
 
-**Fonctionnalité 1 – Objectifs**
+**Fonctionnalité 1 – Objectifs**<br />
+
 Sélectionnez un ou plusieurs objectifs parmi : Perte de poids, Prise de masse, Endurance, Force, Flexibilité, Remise en forme.
 
-**Fonctionnalité 2 – Plage de poids**
+**Fonctionnalité 2 – Plage de poids**<br />
+
 Définissez un poids minimum et un poids maximum (en kg).
 
-**Fonctionnalité 3 – Nombre de lignes**
+**Fonctionnalité 3 – Nombre de lignes**<br />
+
 Choisissez le nombre de lignes à afficher dans le tableau (entre 1 et 50).
 
-**Fonctionnalité 4 – Tableau de résultats**
+**Fonctionnalité 4 – Tableau de résultats**<br />
+
 Le tableau généré affiche pour chaque ligne : le poids, le nombre de séries, les répétitions, le temps de repos, l'intensité en pourcentage, et l'objectif associé.
 
-**Bonus 1 – Validation des champs**
+**Bonus 1 – Validation des champs**<br />
+
 Tous les champs sont valides : poids positifs, poids max supérieur au poids min, nombre de lignes entre 1 et 50, au moins un objectif sélectionné.
 
-**Bonus 2 – Responsive**
+**Bonus 2 – Responsive**<br />
+
 L'interface s'adapte aux mobiles, tablettes et desktop.
 ![image](/images/CleanShot%202026-02-20%20at%2011.46.43@2x.jpg)
 
 ![image](/images/CleanShot 2026-02-20 at 11.47.07@2x.jpg)
 
-**Bonus 3 – Export**
+**Bonus 3 – Export**<br />
+
 Export en CSV (téléchargement direct) et en PDF (impression navigateur).
 
 ---
