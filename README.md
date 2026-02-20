@@ -55,7 +55,7 @@ Tous les champs sont valides : poids positifs, poids max supérieur au poids mi
 L'interface s'adapte aux mobiles, tablettes et desktop.
 ![image](/images/CleanShot%202026-02-20%20at%2011.46.43@2x.jpg)
 
-![image](/images/CleanShot 2026-02-20 at 11.47.07@2x.jpg)
+![image](/images/CleanShot%202026-02-20%20at%2011.47.07@2x.jpg)
 
 **Bonus 3 – Export**<br />
 
