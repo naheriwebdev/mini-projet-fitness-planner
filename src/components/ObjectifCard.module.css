@@ -1,0 +1,44 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: left;
+  transition: border-color var(--transition), background var(--transition);
+  cursor: pointer;
+  width: 100%;
+}
+
+.card:hover {
+  border-color: #444;
+}
+
+.card.actif {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.label {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+
+.desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.check {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  color: var(--accent);
+  font-size: 0.85rem;
+}

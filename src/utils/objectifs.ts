@@ -1,0 +1,58 @@
+import type { Objectif } from '../types'
+
+export const OBJECTIFS: Objectif[] = [
+  {
+    id: 'perte_de_poids',
+    label: 'Perte de poids',
+    description: 'Cardio & circuits haute intensité',
+    repRange: [15, 20],
+    seriesRange: [3, 4],
+    reposSecondes: 45,
+    intensitePct: 60,
+  },
+  {
+    id: 'prise_de_masse',
+    label: 'Prise de masse',
+    description: 'Hypertrophie musculaire',
+    repRange: [8, 12],
+    seriesRange: [4, 5],
+    reposSecondes: 90,
+    intensitePct: 75,
+  },
+  {
+    id: 'endurance',
+    label: 'Endurance',
+    description: 'Résistance cardiovasculaire',
+    repRange: [20, 30],
+    seriesRange: [3, 4],
+    reposSecondes: 30,
+    intensitePct: 55,
+  },
+  {
+    id: 'force',
+    label: 'Force',
+    description: 'Charges lourdes, faibles répétitions',
+    repRange: [3, 6],
+    seriesRange: [4, 6],
+    reposSecondes: 180,
+    intensitePct: 90,
+  },
+  {
+    id: 'flexibilite',
+    label: 'Flexibilité',
+    description: 'Mobilité & étirements actifs',
+    repRange: [10, 15],
+    seriesRange: [2, 3],
+    reposSecondes: 60,
+    intensitePct: 40,
+  },
+  {
+    id: 'remise_en_forme',
+    label: 'Remise en forme',
+    description: 'Équilibre général & santé',
+    repRange: [12, 15],
+    seriesRange: [3, 4],
+    reposSecondes: 60,
+    intensitePct: 65,
+  },
+]
