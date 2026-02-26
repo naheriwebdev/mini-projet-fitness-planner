@@ -62,6 +62,7 @@ L'interface s'adapte aux mobiles, tablettes et desktop.
 Export en CSV (téléchargement direct) et en PDF (impression navigateur).
 
 ---
+Il est possible de sélectionner plusieurs objectifs en même temps.
 
 ## Architecture
 

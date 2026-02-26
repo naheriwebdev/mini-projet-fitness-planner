@@ -1,10 +1,8 @@
 export type ObjectifId =
-  | 'perte_de_poids'
-  | 'prise_de_masse'
+  | 'sedentaire'
   | 'endurance'
-  | 'force'
-  | 'flexibilite'
-  | 'remise_en_forme'
+  | 'conservation_masse'
+  | 'prise_de_masse'
 
 export interface Objectif {
   id: ObjectifId
@@ -14,6 +12,7 @@ export interface Objectif {
   seriesRange: [number, number]
   reposSecondes: number
   intensitePct: number
+  proteinesParKg: [number, number]
 }
 
 export interface FormValues {

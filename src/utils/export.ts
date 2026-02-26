@@ -1,11 +1,22 @@
 import type { LigneTableau } from '../types'
 import { formatRepos } from './tableau'
+import { jsPDF } from 'jspdf'
+import autoTable from 'jspdf-autotable'
+import { OBJECTIFS } from './objectifs'
 
 export function exporterCSV(lignes: LigneTableau[]): void {
-  const entetes = ['Poids (kg)', 'Séries', 'Répétitions', 'Repos', 'Intensité (%)', 'Objectif']
-  const lignesCSV = lignes.map((l) =>
-    [l.poids, l.series, l.repetitions, formatRepos(l.repos), l.intensite, l.objectif].join(';'),
-  )
+  const entetes = ['Poids (kg)', 'Protéines (g/jour)', 'Repos', 'Intensité (%)', 'Objectif']
+  const lignesCSV = lignes.map((l) => {
+    const obj = OBJECTIFS.find((o) => o.label === l.objectif)
+    if (!obj) {
+      return [l.poids, '', formatRepos(l.repos), l.intensite, l.objectif].join(';')
+    }
+    const [minKg, maxKg] = obj.proteinesParKg
+    const minG = Math.round(minKg * l.poids)
+    const maxG = Math.round(maxKg * l.poids)
+    const proteines = `${minG} – ${maxG} g/jour`
+    return [l.poids, proteines, formatRepos(l.repos), l.intensite, l.objectif].join(';')
+  })
   const contenu = [entetes.join(';'), ...lignesCSV].join('\n')
   const blob = new Blob([contenu], { type: 'text/csv;charset=utf-8;' })
   const url = URL.createObjectURL(blob)
@@ -16,39 +27,44 @@ export function exporterCSV(lignes: LigneTableau[]): void {
   URL.revokeObjectURL(url)
 }
 
-export function exporterPDF(): void {
-  // only print the table instead of the whole page
-  const table = document.querySelector('table')
-  if (!table) {
-    window.print()
-    return
-  }
+export function exporterPDF(lignes: LigneTableau[]): void {
+  try {
+    if (!lignes || lignes.length === 0) {
+      return
+    }
 
-  const html = `
-    <html>
-      <head>
-        <title>Programme</title>
-        <style>
-          table { width: 100%; border-collapse: collapse; }
-          table, th, td { border: 1px solid black; }
-          th, td { padding: 4px; text-align: left; }
-          body { font-family: sans-serif; margin: 1cm; }
-        </style>
-      </head>
-      <body>
-        ${table.outerHTML}
-      </body>
-    </html>
-  `
+    const doc = new jsPDF('p', 'pt', 'a4')
 
-  const newWin = window.open('', '_blank')
-  if (newWin) {
-    newWin.document.write(html)
-    newWin.document.close()
-    newWin.focus()
-    newWin.print()
-    newWin.close()
-  } else {
-    window.print()
+      const body = lignes.map((l) => {
+        const obj = OBJECTIFS.find((o) => o.label === l.objectif)
+        let proteines = ''
+        if (obj) {
+          const [minKg, maxKg] = obj.proteinesParKg
+          const minG = Math.round(minKg * l.poids)
+          const maxG = Math.round(maxKg * l.poids)
+          proteines = `${minG} – ${maxG} g/jour`
+        }
+        return [
+          `${l.poids} kg`,
+          proteines,
+          formatRepos(l.repos),
+          `${l.intensite}%`,
+          l.objectif,
+        ]
+      })
+
+      autoTable(doc, {
+        head: [['Poids', 'Protéines (g/jour)', 'Repos', 'Intensité', 'Objectif']],
+        body,
+        theme: 'striped',
+        headStyles: { fillColor: [60, 60, 60], textColor: [255, 255, 255] },
+        bodyStyles: { textColor: [0, 0, 0] },
+        alternateRowStyles: { fillColor: [240, 240, 240] },
+      })
+    
+    doc.save('programme.pdf')
+  } catch (err) {
+    console.error('PDF export error:', err)
+    alert(`Erreur PDF: ${err instanceof Error ? err.message : String(err)}`)
   }
 }
