@@ -32,7 +32,7 @@ Ouvre ensuite [http://localhost:5173](http://localhost:5173) dans ton navigateur
 
 **Fonctionnalité 1 – Objectifs**<br />
 
-Sélectionnez un ou plusieurs objectifs parmi : Perte de poids, Prise de masse, Endurance, Force, Flexibilité, Remise en forme.
+Sélectionnez un ou plusieurs objectifs parmi : Sédentaire, Endurance, Conservation de la masse musculaire et Prise de masse musculaire. Plusieurs objectifs peuvent être sélectionnés en même temps.
 
 **Fonctionnalité 2 – Plage de poids**<br />
 
@@ -59,10 +59,7 @@ L'interface s'adapte aux mobiles, tablettes et desktop.
 
 **Bonus 3 – Export**<br />
 
-Export en CSV (téléchargement direct) et en PDF (impression navigateur).
-
----
-Il est possible de sélectionner plusieurs objectifs en même temps.
+Il est possible d'exporter le tableau du programme en format CSV et PDF.
 
 ## Architecture
 
@@ -100,7 +97,7 @@ fitness-planner/
 
 ## Stack technique
 
-- React 18
-- TypeScript 5
-- Vite 5
+- React 
+- TypeScript 
+- Vite v7.3.1
 - CSS Modules (pas de dependance UI externe)
