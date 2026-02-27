@@ -23,7 +23,6 @@ export default function ResultatTableau({ lignes }: Props) {
             <tr>
               <th>Poids</th>
               <th>Protéines (g/jour)</th>
-              <th>Intensité</th>
               <th>Objectif</th>
             </tr>
           </thead>
@@ -41,7 +40,6 @@ export default function ResultatTableau({ lignes }: Props) {
                 <tr key={i} className={i % 2 === 0 ? styles.pair : ''}>
                   <td><strong>{ligne.poids} kg</strong></td>
                   <td>{proteines}</td>
-                  <td><span className={styles.badge}>{ligne.intensite}%</span></td>
                   <td className={styles.objectifCell}>{ligne.objectif}</td>
                 </tr>
               )
