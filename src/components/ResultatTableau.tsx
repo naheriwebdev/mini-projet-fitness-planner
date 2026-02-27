@@ -1,5 +1,4 @@
 import type { LigneTableau } from '../types'
-import { formatRepos } from '../utils/tableau'
 import { exporterCSV, exporterPDF } from '../utils/export'
 import { OBJECTIFS } from '../utils/objectifs'
 import styles from './ResultatTableau.module.css'
@@ -24,7 +23,6 @@ export default function ResultatTableau({ lignes }: Props) {
             <tr>
               <th>Poids</th>
               <th>Protéines (g/jour)</th>
-              <th>Repos</th>
               <th>Intensité</th>
               <th>Objectif</th>
             </tr>
@@ -43,7 +41,6 @@ export default function ResultatTableau({ lignes }: Props) {
                 <tr key={i} className={i % 2 === 0 ? styles.pair : ''}>
                   <td><strong>{ligne.poids} kg</strong></td>
                   <td>{proteines}</td>
-                  <td>{formatRepos(ligne.repos)}</td>
                   <td><span className={styles.badge}>{ligne.intensite}%</span></td>
                   <td className={styles.objectifCell}>{ligne.objectif}</td>
                 </tr>
