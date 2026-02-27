@@ -8,8 +8,6 @@ export interface Objectif {
   id: ObjectifId
   label: string
   description: string
-  repRange: [number, number]
-  seriesRange: [number, number]
   proteinesParKg: [number, number]
 }
 
@@ -29,7 +27,5 @@ export interface FormErrors {
 
 export interface LigneTableau {
   poids: number
-  series: number
-  repetitions: number
   objectif: string
 }
