@@ -26,6 +26,7 @@ export function useFormulaire() {
 
   function setChamp<K extends keyof Omit<FormValues, 'objectifs'>>(champ: K, valeur: string) {
     setValues((prev) => ({ ...prev, [champ]: valeur }))
+    // revalide en temps réel si le formulaire a déjà été soumis une fois
     if (soumis) {
       const newValues = { ...values, [champ]: valeur }
       const newErrors = validerFormulaire(newValues)

@@ -31,6 +31,7 @@ export default function ResultatTableau({ lignes }: Props) {
               const obj = OBJECTIFS.find((o) => o.label === ligne.objectif)
               let proteines = ''
               if (obj) {
+                // calcule la plage de protéines : min/max par kg × poids actuel
                 const [minKg, maxKg] = obj.proteinesParKg
                 const minG = Math.round(minKg * ligne.poids)
                 const maxG = Math.round(maxKg * ligne.poids)

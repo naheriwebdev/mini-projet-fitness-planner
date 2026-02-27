@@ -7,8 +7,6 @@ export const OBJECTIFS: Objectif[] = [
     description: 'Activité physique légère',
     repRange: [12, 15],
     seriesRange: [2, 3],
-    reposSecondes: 60,
-    intensitePct: 40,
     proteinesParKg: [0.8, 1.0],
   },
   {
@@ -17,8 +15,6 @@ export const OBJECTIFS: Objectif[] = [
     description: 'Résistance cardiovasculaire',
     repRange: [15, 20],
     seriesRange: [3, 4],
-    reposSecondes: 45,
-    intensitePct: 55,
     proteinesParKg: [1.2, 1.6],
   },
   {
@@ -27,8 +23,6 @@ export const OBJECTIFS: Objectif[] = [
     description: 'Maintien de la musculature',
     repRange: [8, 12],
     seriesRange: [3, 4],
-    reposSecondes: 60,
-    intensitePct: 65,
     proteinesParKg: [1.6, 1.8],
   },
   {
@@ -37,8 +31,6 @@ export const OBJECTIFS: Objectif[] = [
     description: 'Hypertrophie musculaire',
     repRange: [8, 12],
     seriesRange: [4, 5],
-    reposSecondes: 90,
-    intensitePct: 75,
     proteinesParKg: [1.8, 2.2],
   },
 ]
